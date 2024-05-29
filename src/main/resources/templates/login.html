@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minigris</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content" align="center">
+    <h1 align="center">User Login</h1>
+    <div class="loginform" align="center">
+        <form th:action="@{/login}" method="post">
+            <div align="center" style="padding-right: 40px;">
+                <label style="color: white; font-weight: bold;">Email:</label>
+                <input class="inputform" type="text" id="username" name="username" placeholder="Email"/><br/>
+            </div>
+
+            <div align="center" style="padding-right: 65px;">
+                <label style="color: white; font-weight: bold">Password:</label>
+                <input class="inputform" type="password" id="password" name="password" placeholder="Password"/><br/>
+            </div>
+            <div align="center">
+                <button class="pigbutton" type="submit">LOG IN</button>
+                <a class="pigbutton" th:href="@{'/'}">BACK</a>
+            </div>
+        </form>
+        <div>
+            <br/>
+            <span th:if="${param.error}" style="color:lightpink; background-color: #6690a0; padding: 5px;">ERROR: Wrong email or password</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

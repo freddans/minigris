@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minigris</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        .button-div {
+            align: left;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <div align="center">
+        <h1>Minigris</h1>
+    </div>
+    <div class="button-div" align="center">
+        <a class="pigbutton" th:href="@{'/login'}">LOG IN</a>
+        <a class="pigbutton" th:href="@{'/register'}">CREATE</a>
+    </div>
+</div>
+
+</body>
+</html>

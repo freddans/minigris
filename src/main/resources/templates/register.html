@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minigris</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content" align="center">
+    <h1 align="center">User Registration</h1>
+    <div class="registrationform" align="center">
+        <form th:action="@{'/register'}" method="post" th:object="${user}">
+
+            <div align="center" style="padding-right: 32px;">
+            <label style="color: white; font-weight: bold;">Email:</label>
+            <input class="inputform" type="email" th:field="*{email}"/><br/>
+            </div>
+
+            <div align="center" style="padding-right: 57px;">
+            <label style="color: white; font-weight: bold">Password:</label>
+            <input class="inputform" type="password" th:field="*{password}"/><br/>
+            </div>
+            <div align="center">
+                <button class="pigbutton" type="submit">CREATE</button>
+                <a class="pigbutton" th:href="@{'/'}">BACK</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

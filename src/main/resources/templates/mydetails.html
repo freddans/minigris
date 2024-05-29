@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minigris</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+<div class="wholetable">
+    <table align="left">
+
+        <thead class="allheadersdiv">
+        <tr>
+            <th class="headclass" style="color: lightpink; font-weight: bold;">ID</th>
+            <th class="email/username" style="color: lightpink; font-weight: bold;">EMAIL</th>
+            <th class="roles" style="color: lightpink; font-weight: bold;">ROLE</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="user : ${userinfo}">
+            <td th:text="${userinfo.getId()}" style="color: lightpink; font-weight: bold;"></td>
+            <td th:text="${userinfo.getEmail()}" style="color: lightpink; font-weight: bold;"></td>
+            <td th:text="${userinfo.getRoles()}" style="color: lightpink; font-weight: bold;"></td>
+        </tr>
+        </tbody>
+    </table>
+    <form name="logoutForm" th:action="@{/logout}" method="post">
+        <button class="pigbutton" type="submit">LOGOUT</button>
+    </form>
+</div>
+
+</body>
+</html>

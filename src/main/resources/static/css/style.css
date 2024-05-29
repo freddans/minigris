@@ -1,0 +1,56 @@
+body {
+    background-color: #6690a0;
+    background-image: url('/images/minigris.jpg');
+    background-size: auto; /* Set to auto to maintain original size */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 72px;
+    color: white;
+    font-style: italic;
+}
+
+.pigbutton {
+    background-color: lightpink;
+    border: none; /* Removes the default button border */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    display: inline-block; /* Allows setting width and height */
+    font-size: 16px; /* Adjust font size as needed */
+    margin: 4px 2px; /* Adjust margin as needed */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 0; /* Make the button square */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Darker pink on hover */
+.pigbutton:hover {
+    background-color: #ff99aa; /* Slightly darker pink */
+}
+
+.link-button {
+    text-decoration: none;
+    color: white;
+}
+
+button, a {
+    font-family: Arial, sans-serif;
+}
+
+.inputform {
+    background-color: lightsteelblue;
+    color: white;
+    font-weight: bold;
+    border-radius: 0;
+    border: none;
+    display: inline-block;
+}
