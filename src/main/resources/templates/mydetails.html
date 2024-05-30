@@ -15,6 +15,7 @@
             <th class="headclass" style="color: lightpink; font-weight: bold;">ID</th>
             <th class="email/username" style="color: lightpink; font-weight: bold;">EMAIL</th>
             <th class="roles" style="color: lightpink; font-weight: bold;">ROLE</th>
+            <th class="password" style="color: lightpink; front-weigth: bold;">PASSWORD</th>
         </tr>
         </thead>
 
@@ -23,13 +24,15 @@
             <td th:text="${userinfo.getId()}" style="color: lightpink; font-weight: bold;"></td>
             <td th:text="${userinfo.getEmail()}" style="color: lightpink; font-weight: bold;"></td>
             <td th:text="${userinfo.getRoles()}" style="color: lightpink; font-weight: bold;"></td>
+            <td th:text="${userinfo.getPassword()}" style="color:lightpink; font-weight: bold;"></td>
         </tr>
         </tbody>
     </table>
-    <form name="logoutForm" th:action="@{/logout}" method="post">
+    <form name="logoutForm" onmouseover="playSound()" th:action="@{/logout}" method="post">
         <button class="pigbutton" type="submit">LOGOUT</button>
     </form>
 </div>
 
+<script src="/js/sound.js"></script>
 </body>
 </html>

@@ -27,8 +27,8 @@
                 <input class="inputform" type="password" id="password" name="password" placeholder="Password"/><br/>
             </div>
             <div align="center">
-                <button class="pigbutton" type="submit">LOG IN</button>
-                <a class="pigbutton" th:href="@{'/'}">BACK</a>
+                <button class="pigbutton" onmouseover="playSound()" type="submit">LOG IN</button>
+                <a class="pigbutton" onmouseover="playSound()" th:href="@{'/'}">BACK</a>
             </div>
         </form>
         <div>
@@ -38,5 +38,6 @@
     </div>
 </div>
 
+<script src="/js/sound.js"></script>
 </body>
 </html>

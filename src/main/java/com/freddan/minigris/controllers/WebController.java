@@ -46,7 +46,7 @@ public class WebController {
         if (result.equals("User was saved")) {
             return "redirect:/mydetails";
         } else {
-            return "register";
+            return result;
         }
     }
 

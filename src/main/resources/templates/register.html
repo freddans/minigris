@@ -20,20 +20,26 @@
 
             <div align="center" style="padding-right: 32px;">
             <label style="color: white; font-weight: bold;">Email:</label>
-            <input class="inputform" type="email" th:field="*{email}"/><br/>
+            <input class="inputform" type="email" placeholder="Register Email" th:field="*{email}"/><br/>
             </div>
 
             <div align="center" style="padding-right: 57px;">
             <label style="color: white; font-weight: bold">Password:</label>
-            <input class="inputform" type="password" th:field="*{password}"/><br/>
+            <input class="inputform" type="password" placeholder="Register Password" th:field="*{password}"/><br/>
             </div>
             <div align="center">
-                <button class="pigbutton" type="submit">CREATE</button>
-                <a class="pigbutton" th:href="@{'/'}">BACK</a>
+                <button class="pigbutton" onmouseover="playSound()" type="submit">CREATE</button>
+                <a class="pigbutton" onmouseover="playSound()" th:href="@{'/'}">BACK</a>
             </div>
         </form>
+
+        <div>
+            <br/>
+            <span th:if="${param.error}" style="color:lightpink; background-color: #6690a0; padding: 5px;">ERROR: Either email already exist or both fields needs to be filled</span>
+        </div>
     </div>
 </div>
 
+<script src="/js/sound.js"></script>
 </body>
 </html>

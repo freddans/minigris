@@ -30,43 +30,60 @@ public class UserService {
     }
 
     public String createUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        if (user.getRoles() == null) {
-            user.setRoles("USER");
+        if (user.getEmail() == null || user.getEmail().isEmpty() || user.getEmail() == null ||user.getPassword().isEmpty()) {
 
-            User result = userRepository.save(user);
-
-            if (result.getId() > 0) {
-                System.out.println("user saved as user automatically");
-
-                return "User was saved";
-            } else {
-
-                return "ERROR: User could not be saved";
-            }
-        } else if (user.getRoles() != null) {
-
-            if (user.getRoles().equals("ADMIN") || user.getRoles().equals("USER")) {
-
-                User result = userRepository.save(user);
-
-                if (result.getId() > 0) {
-
-                    System.out.println("user saved with role given");
-
-                    return "User was saved";
-                } else {
-
-                    return "ERROR: User could not be saved";
-                }
-            } else {
-
-                return "ERROR: Roles has to be set as either ADMIN or USER";
-            }
+            return "redirect:/register?error";
         } else {
-            return "ERROR: Unknown error when creating a user";
+            Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
+
+            if (existingUser.isPresent()) {
+
+                return "redirect:/register?error";
+
+            } else {
+
+                user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+                if (user.getRoles() == null) {
+                    user.setRoles("USER");
+
+                    User result = userRepository.save(user);
+
+                    if (result.getId() > 0) {
+                        System.out.println("user saved as user automatically");
+
+                        return "User was saved";
+                    } else {
+
+                        return "ERROR: User could not be saved";
+                    }
+                } else if (user.getRoles() != null) {
+
+                    if (user.getRoles().equals("ADMIN") || user.getRoles().equals("USER")) {
+
+                        User result = userRepository.save(user);
+
+                        if (result.getId() > 0) {
+
+                            System.out.println("user saved with role given");
+
+                            return "User was saved";
+                        } else {
+
+                            return "ERROR: User could not be saved";
+                        }
+                    } else {
+
+                        return "ERROR: Roles has to be set as either ADMIN or USER";
+                    }
+                } else {
+                    return "ERROR: Unknown error when creating a user";
+                }
+            }
+
         }
+
     }
 
 //    public Object findMyDetails() {

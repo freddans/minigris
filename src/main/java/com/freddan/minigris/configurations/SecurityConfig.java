@@ -32,7 +32,7 @@ public class SecurityConfig {
                         .requestMatchers("/user/all").permitAll()
 
                         // css and images
-                        .requestMatchers("/css/**", "/images/**").permitAll()
+                        .requestMatchers("/css/**", "/images/**", "/js/**", "/sound/**").permitAll()
 
                         // web all permitted
                         .requestMatchers("/", "/register", "/login").permitAll()
