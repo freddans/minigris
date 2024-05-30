@@ -30,12 +30,6 @@ public class UserController {
         return ResponseEntity.ok(userService.createUser(user));
     }
 
-//    @GetMapping("/mydetails")
-//    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
-//    public ResponseEntity<Object> getMyDetails() {
-//        return ResponseEntity.ok(userService.findMyDetails());
-//    }
-
     @GetMapping("/mydetails")
     @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public ResponseEntity<User> getMyDetails() {
